@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Community Event Portal</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onbeforeunload="return warningMessage()">
+
+    <header id="mainHeader">
+
+        <h1>Community Event Portal</h1>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+        <a href="help.html" target="_blank">
+            Help Page
+        </a>
+
+    </header>
+
+    <section id="home">
+
+        <div id="welcomeBanner">
+
+            <h2>Welcome User</h2>
+
+            <p>
+                <span style="color:red; font-weight:bold;">
+                    Special Offer Available
+                </span>
+            </p>
+
+            <p class="highlight">
+                Register today for free events
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="events">
+
+    </section>
+
+    <h2>Event Gallery</h2>
+
+    <table>
+
+        <caption>Community Events</caption>
+
+        <tr>
+
+            <td>
+                <img src="https://picsum.photos/150?1"
+                     alt="Event1"
+                     title="Music"
+                     width="150"
+                     class="imgStyle"
+                     ondblclick="enlarge(this)">
+            </td>
+
+            <td>
+                <img src="https://picsum.photos/150?2"
+                     alt="Event2"
+                     title="Art"
+                     width="150"
+                     class="imgStyle"
+                     ondblclick="enlarge(this)">
+            </td>
+
+            <td>
+                <img src="https://picsum.photos/150?3"
+                     alt="Event3"
+                     title="Sports"
+                     width="150"
+                     class="imgStyle"
+                     ondblclick="enlarge(this)">
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                <img src="https://picsum.photos/150?4"
+                     alt="Event4"
+                     title="Dance"
+                     width="150"
+                     class="imgStyle"
+                     ondblclick="enlarge(this)">
+            </td>
+
+            <td>
+                <img src="https://picsum.photos/150?5"
+                     alt="Event5"
+                     title="Food"
+                     width="150"
+                     class="imgStyle"
+                     ondblclick="enlarge(this)">
+            </td>
+
+            <td>
+                <img src="https://picsum.photos/150?6"
+                     alt="Event6"
+                     title="Festival"
+                     width="150"
+                     class="imgStyle"
+                     ondblclick="enlarge(this)">
+            </td>
+
+        </tr>
+
+    </table>
+
+    <h2>Registration Form</h2>
+
+    <form id="registerForm"
+          onsubmit="validateForm(event)">
+
+        <input type="text"
+               name="username"
+               placeholder="Enter Name"
+               required
+               autofocus>
+
+        <br>
+
+        <input type="email"
+               name="email"
+               placeholder="Enter Email"
+               required>
+
+        <br>
+
+        <input type="date" required>
+
+        <br>
+
+        <input type="text"
+               id="phone"
+               placeholder="Phone Number"
+               onblur="validatePhone()">
+
+        <br>
+
+        <select id="eventType"
+                name="event"
+                onchange="showFee(this.value)">
+
+            <option value="">Select Event</option>
+            <option value="100">Music</option>
+            <option value="200">Art</option>
+
+        </select>
+
+        <p id="fee"></p>
+
+        <textarea id="feedback"
+                  placeholder="Feedback"
+                  onkeyup="countChar()"></textarea>
+
+        <p id="count"></p>
+
+        <button type="submit"
+                id="registerBtn">
+
+            Submit
+
+        </button>
+
+        <br><br>
+
+        <output id="msg"></output>
+
+        <p id="formError"></p>
+
+    </form>
+
+    <h2>Promo Video</h2>
+
+    <video controls
+           width="400"
+           oncanplay="videoReady()">
+
+        <source src="video.mp4"
+                type="video/mp4">
+
+    </video>
+
+    <p id="videoMsg"></p>
+
+    <p id="loading"></p>
+
+    <button onclick="savePreference()">
+        Save Preference
+    </button>
+
+    <button onclick="clearData()">
+        Clear Preferences
+    </button>
+
+    <h2>Find Nearby Events</h2>
+
+    <button onclick="findLocation()">
+        Find Nearby Events
+    </button>
+
+    <p id="location"></p>
+
+    <div class="news">
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptatum adipisci consequatur beatae, accusamus
+        exercitationem impedit aspernatur at eius cumque.
+
+    </div>
+
+    <footer id="contact">
+
+        <h2>Contact</h2>
+
+        <p>Email : community@gmail.com</p>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
